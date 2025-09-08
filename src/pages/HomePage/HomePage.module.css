@@ -1,0 +1,60 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  font-family: Arial, sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 24px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.description {
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.features {
+  padding-left: 30px;
+  margin-bottom: 24px;
+  list-style: disc;
+}
+
+.security {
+  font-weight: 600;
+  color: #2d7a4c;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cta {
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.developer {
+  border-top: 2px solid #ccc;
+  padding-top: 24px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.link {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
