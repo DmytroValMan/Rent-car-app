@@ -1,60 +1,62 @@
 .container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 24px;
-  font-family: Arial, sans-serif;
-  line-height: 1.8;
-  color: #333;
-  background: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  background-image: url(../../img/Picture-min.jpg);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+@media only screen and (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .container {
+    background-image: url(../../img/Picture@2x-min.jpg);
+  }
+}
+
+.contentWrapper {
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
-  font-size: 32px;
-  margin-bottom: 24px;
-  color: #2c3e50;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.2;
   text-align: center;
+  color: var(--white);
+  margin-bottom: 16px;
 }
 
-.description {
-  margin-bottom: 20px;
-  font-size: 18px;
-  text-align: center;
-}
-
-.features {
-  padding-left: 30px;
-  margin-bottom: 24px;
-  list-style: disc;
-}
-
-.security {
+.text {
   font-weight: 600;
-  color: #2d7a4c;
+  font-size: 24px;
+  line-height: 1.33;
   text-align: center;
-  margin-bottom: 20px;
-}
-
-.cta {
-  font-style: italic;
-  text-align: center;
+  color: var(--white);
   margin-bottom: 40px;
-  color: #555;
-}
-
-.developer {
-  border-top: 2px solid #ccc;
-  padding-top: 24px;
-  margin-top: 40px;
-  text-align: center;
 }
 
 .link {
-  color: #0077cc;
-  text-decoration: none;
+  display: block;
+  border-radius: 12px;
+  padding: 12px 99px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--white);
+  /* width: 276px;
+  height: 44px; */
+  background: var(--button);
+
+  transition: background-color 0.3s ease;
 }
 
-.link:hover {
-  text-decoration: underline;
+.link:hover,
+.link:focus {
+  background-color: var(--button-hover);
 }

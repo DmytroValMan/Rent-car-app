@@ -5,24 +5,18 @@
   justify-content: center;
   height: 100vh;
   text-align: center;
-  background-color: #f7f9fc;
+  background-color: var(--white);
 }
 
 .message {
   font-size: 24px;
-  font-weight: bold;
-  color: #333;
+  font-weight: 700;
+  color: var(--main);
   margin-bottom: 16px;
 }
 
 .link {
   font-size: 18px;
-  color: #0077cc;
-  text-decoration: none;
+  color: var(--button-hover);
   font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.link:hover {
-  color: #0056a3;
 }

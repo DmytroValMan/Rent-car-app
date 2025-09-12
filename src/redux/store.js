@@ -11,21 +11,21 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import contactsReducer from "./contacts/slice";
-import filtersReducer from "./filters/slice";
-import authReducer from "./auth/slice";
+import carsReducer from "./cars/slice.js";
+import filtersReducer from "./filters/slice.js";
+import favoritesReducer from "./favorites/slice.js";
 
-const authPersistConfig = {
-  key: "auth",
+const favoritesPersistConfig = {
+  key: "favorites",
   storage,
-  whitelist: ["token"],
+  whitelist: ["cars"],
 };
 
 export const store = configureStore({
   reducer: {
-    contacts: contactsReducer,
+    cars: carsReducer,
     filters: filtersReducer,
-    auth: persistReducer(authPersistConfig, authReducer),
+    favorites: persistReducer(favoritesPersistConfig, favoritesReducer),
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
