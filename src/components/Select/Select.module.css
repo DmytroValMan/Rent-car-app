@@ -1,0 +1,10 @@
+.label {
+  display: block;
+}
+.label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--gray);
+  margin-bottom: 8px;
+}

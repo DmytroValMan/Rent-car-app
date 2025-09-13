@@ -28,8 +28,9 @@ const slice = createSlice({
         state.loading = false;
         state.error = null;
         const { cars, page, totalPages } = action.payload;
+        const pageNumber = Number(page);
 
-        if (page === 1) {
+        if (pageNumber === 1) {
           state.items = cars; // якщо перша сторінка — оновлюємо повністю
         } else {
           const existingIds = new Set(state.items.map((car) => car.id));

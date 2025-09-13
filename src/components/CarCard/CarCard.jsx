@@ -27,6 +27,7 @@ const CarCard = ({ car }) => {
   const city = parts[parts.length - 2].trim();
   const country = parts[parts.length - 1].trim();
   const formatedMileage = Number(mileage)?.toLocaleString("uk-UA");
+  const formatedType = type[0] + type.slice(1).toLowerCase();
   const isFavorite = favoriteCars.some((item) => item.id === car.id);
 
   const handleFavoritesClick = () => {
@@ -88,13 +89,18 @@ const CarCard = ({ car }) => {
       <ul className={css.infoWrapper}>
         <li className={css.item}>{city}</li>
         <li className={css.item}>{country}</li>
-        <li className={css.item}>{rentalCompany}</li>
+        <li className={`${css.item} ${css.withLine}`}>{rentalCompany}</li>
       </ul>
       <ul className={css.infoWrapper}>
-        <li className={css.item}>{type}</li>
+        <li className={css.item}>{formatedType}</li>
         <li className={css.item}>{formatedMileage} km</li>
       </ul>
-      <Link to={`/catalog/${id}`} className={css.link}>
+      <Link
+        to={`/catalog/${id}`}
+        className={css.link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Read more
       </Link>
     </div>

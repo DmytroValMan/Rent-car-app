@@ -90,3 +90,19 @@
 .link:visited {
   color: var(--white);
 }
+
+.item {
+  position: relative;
+}
+
+.item:not(:last-child)::after,
+.withLine::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -6px;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 16px;
+  background-color: var(--gray-light); /* або var(--gray-border), якщо є */
+}

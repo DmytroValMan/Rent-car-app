@@ -1,0 +1,87 @@
+.allWrapper {
+  width: 488px;
+  padding-top: 20px;
+}
+
+.title {
+  display: flex;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  align-items: last baseline;
+  margin-bottom: 8px;
+}
+
+.fourDigitId {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--gray);
+}
+
+.fourDigitId {
+  margin-left: 16px;
+}
+
+.placeWrapper,
+.placeMileageWrapper {
+  display: flex;
+}
+
+.placeWrapper {
+  gap: 4px;
+}
+
+.placeMileageWrapper {
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.place,
+.mileage {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  color: var(--button);
+  margin-bottom: 32px;
+}
+
+.detailsTitleWrapper {
+  margin-bottom: 68px;
+}
+
+.description {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.subtitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+/* .icon {
+  margin-right: 8px;
+} */
+
+.item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.listWrapper:not(:last-child) {
+  margin-bottom: 110px;
+}
+
+.item {
+  display: flex;
+  gap: 8px;
+}

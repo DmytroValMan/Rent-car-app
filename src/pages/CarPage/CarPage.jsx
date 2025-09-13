@@ -7,6 +7,8 @@ import { selectCarById } from "../../redux/cars/selectors.js";
 import css from "./CarPage.module.css";
 
 import { fetchCarById } from "../../redux/cars/operations.js";
+import CarDetailedInfo from "../../components/CarDetailedInfo/CarDetailedInfo.jsx";
+import OrderForm from "../../components/OrderForm/OrderForm.jsx";
 
 const CarPage = () => {
   const { id } = useParams();
@@ -18,15 +20,21 @@ const CarPage = () => {
   }, [dispatch, id]);
 
   return (
-    <Container>
-      <div className={css.formWrapper}>
-        <div className={css.imgWrapper}>
-          <img className={css.img} src={car.img} alt={car.description} />
-        </div>
-        <OrderForm />
-        <CarDetailedInfo />
-      </div>
-    </Container>
+    <section>
+      <Container>
+        {car && (
+          <div className={css.pageWrapper}>
+            <div className={css.formWrapper}>
+              <div className={css.imgWrapper}>
+                <img className={css.img} src={car.img} alt={car.description} />
+              </div>
+              <OrderForm />
+            </div>
+            <CarDetailedInfo />
+          </div>
+        )}
+      </Container>
+    </section>
   );
 };
 

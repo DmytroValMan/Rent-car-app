@@ -1,0 +1,21 @@
+.pageWrapper {
+  display: flex;
+  gap: 72px;
+  margin: 84px 0 104px;
+}
+
+.formWrapper {
+  width: 640px;
+}
+
+.imgWrapper {
+  border-radius: 19px;
+  height: 512px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.img {
+  height: 100%;
+  object-fit: cover;
+}

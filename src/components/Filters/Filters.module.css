@@ -1,0 +1,98 @@
+.formicWrapper {
+  display: flex;
+  margin: 84px 138px 56px;
+}
+
+.formWrapper {
+  display: flex;
+  gap: 16px;
+}
+
+.inputBrand,
+.inputPrice {
+  border-radius: 12px;
+  padding: 12px 16px;
+  height: 44px;
+  background: var(--inputs);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--main);
+  border: none;
+  outline: none;
+}
+
+.inputBrand {
+  width: 204px;
+}
+
+.inputPrice {
+  width: 196px;
+}
+
+.inputMile::-webkit-outer-spin-button,
+.inputMile::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inputMile {
+  -moz-appearance: textfield;
+}
+
+.inputMile {
+  border: none;
+  outline: none;
+  width: 160px;
+  height: 44px;
+  background: var(--inputs);
+  padding: 12px 24px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--main);
+}
+
+.inputMile:not(:last-child) {
+  border-right: 1px solid var(--gray-light);
+  border-radius: 12px 0 0 12px;
+}
+
+.inputMile:last-child {
+  border-radius: 0 12px 12px 0;
+}
+
+.mileLabel {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+
+.inputMile::placeholder {
+  color: var(--main);
+}
+
+.btn {
+  border-radius: 12px;
+  padding: 12px 51px;
+  width: 156px;
+  height: 44px;
+  background: var(--button);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--white);
+  border: none;
+  outline: none;
+  align-self: flex-end;
+
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--button-hover);
+}

@@ -1,11 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 import CarCard from "../CarCard/CarCard.jsx";
 import css from "./CarsList.module.css";
 import { selectCars, selectTotalPages } from "../../redux/cars/selectors.js";
 import { changeFilter } from "../../redux/filters/slice.js";
 import { fetchCars } from "../../redux/cars/operations.js";
-import { selectPageFilter } from "../../redux/filters/selectors.js";
+import {
+  selectFilters,
+  selectPageFilter,
+} from "../../redux/filters/selectors.js";
 
 const CarsList = () => {
   const carsList = useSelector(selectCars);
@@ -13,6 +17,11 @@ const CarsList = () => {
   const page = useSelector(selectPageFilter);
   // const page = useSelector(selectPage);
   const totalPages = useSelector(selectTotalPages);
+  const filters = useSelector(selectFilters);
+
+  useEffect(() => {
+    dispatch(fetchCars(filters));
+  }, [filters, dispatch]);
 
   const handleClick = () => {
     const nextPage = page + 1;

@@ -1,0 +1,126 @@
+/* wrapper навколо календаря */
+.react-datepicker {
+  font-family: inherit;
+  border: 1px solid var(--button);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: none;
+}
+
+/* верхня панель з місяцем */
+.react-datepicker__header {
+  background-color: var(--white);
+  border-bottom: none;
+  padding: 12px 0;
+}
+
+/* назва місяця */
+.react-datepicker__current-month {
+  font-family: var(--second-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+  text-align: center;
+  color: var(--main);
+}
+
+/* стрілки */
+.react-datepicker__navigation {
+  top: 16px;
+}
+.react-datepicker__navigation-icon::before {
+  border-color: var(--button);
+  border-width: 2px 2px 0 0;
+}
+
+/* назви днів тижня */
+.react-datepicker__day-name {
+  font-family: var(--second-family);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.2;
+  color: var(--gray);
+  margin: 5px;
+}
+
+/* самі дати */
+/* .react-datepicker__day {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--main);
+  line-height: 1.2;
+  width: 32px;
+  height: 32px;
+
+  border-radius: 6px;
+  margin: 2px;
+} */
+
+/* сьогоднішня дата */
+.react-datepicker__day--today {
+  font-weight: 500;
+}
+
+/* обрана дата */
+.react-datepicker__day--selected {
+  background-color: var(--button);
+  color: var(--inputs);
+  border-radius: 32px;
+}
+
+/* hover */
+.react-datepicker__day:hover {
+  background-color: #e6f0ff;
+  border-radius: 32px;
+}
+
+/* неактивні дні */
+.react-datepicker__day--outside-month {
+  color: #ccc;
+}
+
+/* самі дати */
+.react-datepicker__day {
+  position: relative;
+  z-index: 0;
+  text-align: center;
+  line-height: 32px;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  margin: 2px;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--main);
+}
+
+/* Виділений день */
+.react-datepicker__day--selected::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: var(--button);
+  z-index: -1;
+}
+
+.react-datepicker__day:hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: var(--gray-light);
+  z-index: -1;
+}
+
+/* Колір тексту тільки коли selected */
+.react-datepicker__day--selected {
+  color: var(--inputs);
+}
+
+/* Колір тексту при hover */
+.react-datepicker__day:hover {
+  color: var(--main);
+}
