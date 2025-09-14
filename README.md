@@ -63,6 +63,17 @@ src/
 ├── index.css # Global variables and shared styles
 └── main.jsx # Entry point
 
+## 📄 Installation
+
+To run the project locally:
+
+```bash
+git clone https://github.com/DmytroValMan/Rent-car-app.git
+cd Rent-car-app
+npm install
+npm run dev
+
+
 🧑‍💻 Author
 
 Dmytro Manshylin
@@ -71,3 +82,4 @@ Dmytro Manshylin
 📃 License
 
 This project is intended for demonstration purposes only and is not licensed for commercial use.
+```
