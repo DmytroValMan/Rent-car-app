@@ -1,9 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { ClockLoader } from "react-spinners";
 
 import CarCard from "../CarCard/CarCard.jsx";
 import css from "./CarsList.module.css";
-import { selectCars, selectTotalPages } from "../../redux/cars/selectors.js";
+import {
+  selectCars,
+  selectLoading,
+  selectTotalPages,
+} from "../../redux/cars/selectors.js";
 import { changeFilter } from "../../redux/filters/slice.js";
 import { fetchCars } from "../../redux/cars/operations.js";
 import {
@@ -15,7 +20,7 @@ const CarsList = () => {
   const carsList = useSelector(selectCars);
   const dispatch = useDispatch();
   const page = useSelector(selectPageFilter);
-  // const page = useSelector(selectPage);
+  const isLoading = useSelector(selectLoading);
   const totalPages = useSelector(selectTotalPages);
   const filters = useSelector(selectFilters);
 
@@ -29,7 +34,11 @@ const CarsList = () => {
     dispatch(fetchCars({ page: nextPage }));
   };
 
-  return (
+  return isLoading ? (
+    <div className={css.loaderWrapper}>
+      <ClockLoader color="#3470ff" size={300} />
+    </div>
+  ) : (
     <>
       <ul className={css.list}>
         {carsList.map((car) => (

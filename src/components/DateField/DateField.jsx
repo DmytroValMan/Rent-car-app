@@ -18,9 +18,6 @@ const DateField = ({ name, placeholder }) => {
         dateFormat="dd.MM.yyyy"
         name={name}
       />
-      {meta.touched && meta.error && (
-        <div className={css.error}>{meta.error}</div>
-      )}
     </div>
   );
 };

@@ -1,10 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useId } from "react";
+import { useId } from "react";
 import { Field, Form, Formik } from "formik";
 
 import css from "./Filters.module.css";
-import { changeFilter, resetFilters } from "../../redux/filters/slice.js";
-import { fetchCars } from "../../redux/cars/operations.js";
+import { changeFilter } from "../../redux/filters/slice.js";
 import { Select } from "../Select/Select.jsx";
 import { selectBrandsListFilter } from "../../redux/filters/selectors.js";
 
@@ -19,15 +18,8 @@ const Filters = () => {
 
   const rentalPrices = [30, 40, 50, 60, 70, 80];
 
-  // useEffect(() => {
-  //   dispatch(fetchCars({}));
-  // }, [dispatch]);
-
   const handleSubmit = (values, actions) => {
-    // dispatch(resetFilters());
     dispatch(changeFilter(values));
-    // dispatch(fetchCars({ ...values, page: 1 }));
-    // actions.resetForm();
   };
 
   const initialValues = {

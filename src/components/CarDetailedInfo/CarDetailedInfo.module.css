@@ -69,10 +69,6 @@
   margin-bottom: 20px;
 }
 
-/* .icon {
-  margin-right: 8px;
-} */
-
 .item:not(:last-child) {
   margin-bottom: 16px;
 }

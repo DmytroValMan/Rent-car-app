@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
+import { ClockLoader } from "react-spinners";
 
 import Container from "../../components/Container/Container.jsx";
-import { selectCarById } from "../../redux/cars/selectors.js";
+import { selectCarById, selectLoading } from "../../redux/cars/selectors.js";
 import css from "./CarPage.module.css";
 
 import { fetchCarById } from "../../redux/cars/operations.js";
@@ -14,12 +15,17 @@ const CarPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const car = useSelector(selectCarById);
+  const isLoading = useSelector(selectLoading);
 
   useEffect(() => {
     dispatch(fetchCarById(id));
   }, [dispatch, id]);
 
-  return (
+  return isLoading ? (
+    <div className={css.loaderWrapper}>
+      <ClockLoader color="#3470ff" size={300} />
+    </div>
+  ) : (
     <section>
       <Container>
         {car && (

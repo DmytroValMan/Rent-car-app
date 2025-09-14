@@ -1,4 +1,4 @@
-import { Field, useFormikContext } from "formik";
+import { Field } from "formik";
 import css from "./Select.module.css";
 
 export const Select = ({

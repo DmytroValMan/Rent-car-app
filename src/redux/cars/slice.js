@@ -18,7 +18,6 @@ const slice = createSlice({
     selectedCar: null,
     loading: false,
     error: null,
-    // page: 1,
     totalPages: 1,
   },
   extraReducers: (builder) => {
@@ -38,7 +37,6 @@ const slice = createSlice({
           state.items.push(...newCars); // якщо наступна сторінка — додаємо
         }
 
-        // state.page = page;
         state.totalPages = totalPages;
       })
       .addCase(fetchCars.rejected, handleRejected)

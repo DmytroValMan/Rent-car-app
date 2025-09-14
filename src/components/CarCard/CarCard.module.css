@@ -1,6 +1,3 @@
-.cardWrapper {
-}
-
 .imgWrapper {
   position: relative;
   border-radius: 14px;
@@ -19,17 +16,8 @@
   object-fit: cover;
 }
 
-/* .photoIcon {
-  color: var(--badges);
-  width: 16px;
-  height: 16px;
-  display: block;
-  overflow: visible;
-} */
-
 .favoriteIcon {
   color: var(--button);
-  /* fill: var(--button); */
 }
 
 .iconBtn {
@@ -41,7 +29,6 @@
   padding: 0;
   border: none;
   height: 16px;
-  /* fill: blue; */
 }
 
 .titleWrapper {
@@ -104,5 +91,5 @@
   transform: translateY(-50%);
   width: 1px;
   height: 16px;
-  background-color: var(--gray-light); /* або var(--gray-border), якщо є */
+  background-color: var(--gray-light);
 }

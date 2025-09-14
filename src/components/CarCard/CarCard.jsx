@@ -43,29 +43,6 @@ const CarCard = ({ car }) => {
           type="button"
           onClick={handleFavoritesClick}
         >
-          {/* <svg
-            className={`${css.photoIcon} ${isFavorite ? css.favoriteIcon : ""}`}
-            width="16"
-            height="16"
-            viewBox="-8 -4 32 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {isFavorite ? (
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M7.99978 1.31405C12.4378 -3.24795 23.5338 4.73505 7.99978 15.0001C-7.53422 4.73605 3.56178 -3.24795 7.99978 1.31405Z"
-                fill="var(--button)"
-              />
-            ) : (
-              <path
-                fill="none"
-                stroke="#f2f4f7"
-                strokeWidth="1.5"
-                d="M7.99978 1.31405C12.4378 -3.24795 23.5338 4.73505 7.99978 15.0001C-7.53422 4.73605 3.56178 -3.24795 7.99978 1.31405Z"
-              />
-            )}
-          </svg> */}
           <svg
             width="16"
             height="16"

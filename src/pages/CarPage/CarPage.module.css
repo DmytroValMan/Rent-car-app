@@ -1,3 +1,9 @@
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .pageWrapper {
   display: flex;
   gap: 72px;

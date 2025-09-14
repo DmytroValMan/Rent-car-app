@@ -1,22 +1,19 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { ClockLoader } from "react-spinners";
 
+import css from "./CatalogPage.module.css";
 import CarsList from "../../components/CarsList/CarsList.jsx";
 import Container from "../../components/Container/Container";
 import Filters from "../../components/Filters/Filters.jsx";
-// import { selectError, selectLoading } from "../../redux/cars/selectors.js";
-import { fetchCars } from "../../redux/cars/operations.js";
-// import { selectFilters } from "../../redux/filters/selectors.js";
 import { fetchBrands } from "../../redux/filters/operations.js";
+import { selectLoading } from "../../redux/filters/selectors.js";
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
-  // const loading = useSelector(selectLoading);
-  // const error = useSelector(selectError);
-  // const filters = useSelector(selectFilters);
+  const isLoading = useSelector(selectLoading);
 
   useEffect(() => {
-    // dispatch(fetchCars({}));
     dispatch(fetchBrands());
   }, [dispatch]);
 
@@ -24,7 +21,13 @@ const CatalogPage = () => {
     <section>
       <Container>
         <Filters />
-        <CarsList />
+        {isLoading ? (
+          <div className={css.loaderWrapper}>
+            <ClockLoader color="#3470ff" size={300} />
+          </div>
+        ) : (
+          <CarsList />
+        )}
       </Container>
     </section>
   );

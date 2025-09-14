@@ -1,3 +1,9 @@
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .list {
   display: flex;
   flex-wrap: wrap;
@@ -15,8 +21,6 @@
   border: 1px solid var(--button);
   border-radius: 12px;
   padding: 12px 51px;
-  /* width: 156px;
-  height: 44px; */
   font-weight: 600;
   font-size: 16px;
   line-height: 1.25;

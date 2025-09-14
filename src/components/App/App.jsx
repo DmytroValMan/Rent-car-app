@@ -1,5 +1,4 @@
 import { lazy, Suspense } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
@@ -19,7 +18,7 @@ const App = () => {
     <>
       <Header />
       <main style={{ flexGrow: 1 }}>
-        <Suspense fallback={<p>Loading, please, wait...</p>}>
+        <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/catalog" element={<CatalogPage />} />

@@ -13,22 +13,30 @@ const OrderForm = () => {
     comment: "",
   };
 
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  tomorrow.setHours(0, 0, 0, 0);
+
   const feedbackSchema = Yup.object().shape({
     name: Yup.string()
       .trim()
+      .min(2, "Min 2 characters")
       .max(20, "Max 64 characters")
       .required("Name is required"),
     email: Yup.string()
       .trim()
       .email("Must be a valid email!")
+      .matches(
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+        "Email must be a valid domain"
+      )
       .required("Email is required"),
-    date: Yup.date(),
+    date: Yup.date().min(tomorrow, "Date must be from tomorrow onwards"),
     comment: Yup.string().trim().max(150, "Max 150 characters"),
   });
 
   const handleSubmit = (values, actions) => {
     setTimeout(() => {
-      console.log("Booking data:", values);
       toast.success("Your booking was successful!");
       actions.resetForm();
     }, 1000);
@@ -48,33 +56,57 @@ const OrderForm = () => {
         validationSchema={feedbackSchema}
       >
         <Form>
-          <Field
-            className={css.input}
-            type="text"
-            name="name"
-            placeholder="Name*"
-          />
-          <ErrorMessage className={css.errorMsg} name="name" component="span" />
-          <Field
-            className={css.input}
-            type="email"
-            name="email"
-            placeholder="Email*"
-          />
-          <ErrorMessage
-            className={css.errorMsg}
-            name="email"
-            component="span"
-          />
-          <DateField name="date" placeholder="Booking date" />
-          <ErrorMessage className={css.errorMsg} name="date" component="span" />
-          <Field
-            as="textarea"
-            className={css.textarea}
-            name="comment"
-            placeholder="Comment"
-          />
-          <ErrorMessage className={css.errorMsg} name="date" component="span" />
+          <div className={css.inputWrapper}>
+            <Field
+              className={css.input}
+              type="text"
+              name="name"
+              placeholder="Name*"
+            />
+            <ErrorMessage
+              className={css.errorMsg}
+              name="name"
+              component="span"
+            />
+          </div>
+
+          <div className={css.inputWrapper}>
+            <Field
+              className={css.input}
+              type="email"
+              name="email"
+              placeholder="Email*"
+            />
+            <ErrorMessage
+              className={css.errorMsg}
+              name="email"
+              component="span"
+            />
+          </div>
+
+          <div className={css.inputWrapper}>
+            <DateField name="date" placeholder="Booking date" />
+            <ErrorMessage
+              className={css.errorMsg}
+              name="date"
+              component="span"
+            />
+          </div>
+
+          <div className={css.inputWrapper}>
+            <Field
+              as="textarea"
+              className={css.textarea}
+              name="comment"
+              placeholder="Comment"
+            />
+            <ErrorMessage
+              className={css.errorMsg}
+              name="comment"
+              component="span"
+            />
+          </div>
+
           <button className={css.btn} type="submit">
             Send
           </button>

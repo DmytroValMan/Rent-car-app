@@ -43,20 +43,6 @@
   margin: 5px;
 }
 
-/* самі дати */
-/* .react-datepicker__day {
-  font-family: var(--second-family);
-  font-weight: 400;
-  font-size: 14px;
-  color: var(--main);
-  line-height: 1.2;
-  width: 32px;
-  height: 32px;
-
-  border-radius: 6px;
-  margin: 2px;
-} */
-
 /* сьогоднішня дата */
 .react-datepicker__day--today {
   font-weight: 500;
