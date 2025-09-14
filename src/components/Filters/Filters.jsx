@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useId } from "react";
 import { Field, Form, Formik } from "formik";
+import { NumericFormat } from "react-number-format";
 
 import css from "./Filters.module.css";
 import { changeFilter } from "../../redux/filters/slice.js";
@@ -52,20 +53,37 @@ const Filters = () => {
           <div className={css.mileWrapper}>
             <p className={css.mileLabel}>Car mileage / km</p>
             <div className={css.mileInputsWrapper}>
-              <Field
-                className={css.inputMile}
-                type="number"
-                name="minMileage"
-                placeholder="From"
-                id={mileFromId}
-              />
-              <Field
-                className={css.inputMile}
-                type="number"
-                name="maxMileage"
-                placeholder="To"
-                id={mileToId}
-              />
+              <Field name="minMileage">
+                {({ form }) => (
+                  <NumericFormat
+                    id={mileFromId}
+                    className={css.inputMile}
+                    prefix="From "
+                    placeholder="From"
+                    thousandSeparator=","
+                    allowNegative={false}
+                    onValueChange={(values) => {
+                      form.setFieldValue("minMileage", values.value);
+                    }}
+                  />
+                )}
+              </Field>
+
+              <Field name="maxMileage">
+                {({ form }) => (
+                  <NumericFormat
+                    id={mileToId}
+                    className={css.inputMile}
+                    prefix="To "
+                    placeholder="To"
+                    thousandSeparator=","
+                    allowNegative={false}
+                    onValueChange={(values) => {
+                      form.setFieldValue("maxMileage", values.value);
+                    }}
+                  />
+                )}
+              </Field>
             </div>
           </div>
           <button className={css.btn} type="submit">
